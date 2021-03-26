@@ -50,5 +50,9 @@
       "<rootDir>/dist/",
       "<rootDir>/node_modules/"
     ]
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.0.7",
+    "vue-template-compiler": "^2.6.12"
   }
 }
