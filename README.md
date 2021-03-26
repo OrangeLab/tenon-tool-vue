@@ -18,4 +18,4 @@ Tenon 转换工具——将 Vue 文件转换为 Tenon 标准文件
 ### `transformVue(vue:string):string`
 
 ## TODO
-- [ ] sourcemap 生成
+- [ ] sourcemap 生成 
