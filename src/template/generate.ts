@@ -50,10 +50,15 @@ function gen(node: any) {
   if (node.type == 1) {
     // 元素标签
     return generate(node)
-  } else {
+  } else  if(node.type === 5){
     // 文本标签
-    let text = node.content
-    return text
+    return genereateInterpolation(node);
+  } else if (node.type === 3) {
+    return ` <!-- ${node.content} -->`
+  }
+  else {
+     let text = node.content
+     return text
   }
 }
 
@@ -75,6 +80,12 @@ function generate(el: any) {
     children ? `${children}` : ''
   }</${el.tag}>`
   return code
+}
+// 差值表达式处理
+function genereateInterpolation(node: any) {
+  let content = node.content.content;
+  return `{{${content}}}`
+  
 }
 
 export default generate

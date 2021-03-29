@@ -23,56 +23,31 @@ export default function tenonTemplate(vueString: string): string {
   // let template = getSource(vueString, 'template');
   // if (template) {
   let tenonTemplate = vueTemplateToTenon(vueString)
+  console.log('tenonTemplate',tenonTemplate);
   return tenonTemplate
   // }
 }
 
 tenonTemplate(`
 <template>
-<div>
-测试
-  <span class="cont" :style="{background:red}" :a="2323" @click="go" v-if="dd" v-show="dd" v-for="item of obj">ddd</span>
-  <test-comp v-else="d"></test-comp>
-</div>
+  <!-- <view class="app"> -->
+  <p  v-if="a? a : c" @click="a" class="dd">{{ a+b}} World!</p>
 </template>
 
 <script>
-import TestComp from "./components/test.vue";
-
 export default {
-created() {
-  // hummer setTitle title
-  console.log("");
-},
-data() {
-  return {
-    title: "test",
-  };
-},
-components: {
-  TestComp,
-},
-methods: {
-  go() {
-    location.href='www.baidu.com/a#hash?a=2'
-  },
-
-},
+  data () {
+    return {
+      greeting: "Hello"
+    };
+  }
 };
 </script>
-<style lang="less">
-.cont {
-background-color: red;
-font-size: 15px;
-image {
-  width: 100%;
-  height: 100%;
-  color: red;
-  .a{
-    width: 100px;
-  }
-}
 
+<style scoped>
+p {
+  font-size: 2em;
+  text-align: center;
 }
 </style>
 
