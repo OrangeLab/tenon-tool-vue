@@ -34,6 +34,7 @@ export default function tenonTemplate(vueString: string): string{
 tenonTemplate(`
 <template>
 <div>
+测试
   <span class="cont" :style="{background:red}" :a="2323" @click="go" v-if="dd" v-show="dd" v-for="item of obj">ddd</span>
   <test-comp v-else="d"></test-comp>
 </div>

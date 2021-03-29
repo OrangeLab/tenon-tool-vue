@@ -7,7 +7,7 @@ function vueTemplateToTenon(template: string) {
   let ast = parse(template).descriptor.template?.ast;
 
   // 2. ast处理
-  ast = translate(ast as any)
+  ast = translate(ast)
 
   // 3. 生成文件处理
   const tenonTemplateString = generate(ast);
