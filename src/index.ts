@@ -1,16 +1,23 @@
-import vueTemplateToTenon from './template'
+import { parse } from '@vue/compiler-sfc'
+import generate from './template/generate'
+import tenonScriptTransform from './script'
+import tenonStylesTransform from './styles'
+import tenonTemplateTransform from './template'
 
-// 获取 template script style
-// export function getSource(vueString: string, type: string) {
-//   let reg: RegExp = new RegExp(`<${type}[^>]*>`) // 匹配数据type
-//   let matches = vueString.match(reg)
-//   if (matches) {
-//     let start = vueString.indexOf(matches[0]) + matches[0].length
-//     let end = vueString.lastIndexOf(`</${type}>`)
-//     return vueString.slice(start, end)
-//   }
-//   return ''
-// }
+
+// vueToTenon 解析
+function vueToTenon(vueString: string) {
+  // 1. 编译ast
+  let descriptor = parse(vueString).descriptor
+  // 2. script 处理
+  let script = tenonScriptTransform(descriptor.script);
+  // 3. style 处理
+  let style = tenonStylesTransform(descriptor.styles)
+  // 4. template 处理
+  let template = tenonTemplateTransform(descriptor.template);
+  return {template, script , style }
+}
+
 
 /**
  *template 模板编译器
@@ -19,19 +26,18 @@ import vueTemplateToTenon from './template'
  * @param {string} vueString
  * @return {*}  {string}
  */
-export default function tenonTemplate(vueString: string): string {
-  // let template = getSource(vueString, 'template');
-  // if (template) {
-  let tenonTemplate = vueTemplateToTenon(vueString)
-  console.log('tenonTemplate',tenonTemplate);
-  return tenonTemplate
-  // }
+export default function tenonProgram(vueString: string): string {
+  let { template, script, style } = vueToTenon(vueString);
+  console.log(template + script + style);
+  return template + script + style
 }
 
-tenonTemplate(`
+tenonProgram(`
 <template>
   <!-- <view class="app"> -->
-  <p  v-if="a? a : c" @click="a" class="dd">{{ a+b}} World!</p>
+  <p  v-if="a? a : c" @click.stop="a" class="dd">{{ a+b}} World!</p>
+  <span v-show="ddd">{{a +b }}</span>
+  <div class='a' style="background:red" :style="{color:a}"></div>
 </template>
 
 <script>
@@ -44,7 +50,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang='less'>
 p {
   font-size: 2em;
   text-align: center;

@@ -1,16 +1,14 @@
-import { parse } from '@vue/compiler-sfc'
+import { SFCTemplateBlock} from '@vue/compiler-sfc'
 import generate from './generate'
 import translate from './translate'
 
-function vueTemplateToTenon(template: string) {
-  // 1. 编译ast
-  let ast = parse(template).descriptor.template?.ast
-  // 2. ast处理
+function tenonTemplateTransform(template: SFCTemplateBlock | null) {
+  if (!template) {
+    return ''
+  }
+  let ast = template?.ast
   ast = translate(ast)
-  // 3. 生成文件处理
-  const tenonTemplateString = generate(ast)
-
-  return tenonTemplateString
+  return generate(ast)
 }
 
-export default vueTemplateToTenon
+export default tenonTemplateTransform

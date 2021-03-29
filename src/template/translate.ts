@@ -24,10 +24,7 @@ let vueConvertTeon = {
   },
 }
 
-function translate(ast: ElementNode | undefined) {
-  if (ast == undefined) {
-    return undefined
-  }
+function translate(ast: ElementNode) {
   let { tagConverterConfig, attrConverterConfig } = vueConvertTeon
   // 元素节点处理
   if (ast.type == 1) {
@@ -41,12 +38,10 @@ function translate(ast: ElementNode | undefined) {
       // SIMPLE_EXPRESSION
       if (prop.type == 7 && prop.exp && prop.exp.type == 4) {
         let target = attrConverterConfig[ast.props[k].name as attrConfig]
-        console.log('target',target,prop);
         if (target) {
           let arg = prop.arg as SimpleExpressionNode
           //  简单表达
           if (arg && arg.content) {
-            console.log('arg.content',arg);
             arg.content = target[(prop as any).arg?.content as attrOnConfig] || arg.content
             prop.arg = arg
           }
