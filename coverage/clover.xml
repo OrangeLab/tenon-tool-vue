@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1617009552381" clover="3.2.0">
+  <project timestamp="1617009552381" name="All files">
+    <metrics statements="66" coveredstatements="63" conditionals="76" coveredconditionals="58" methods="9" coveredmethods="9" elements="151" coveredelements="130" complexity="0" loc="66" ncloc="66" packages="2" files="4" classes="4"/>
+    <package name="src">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/liruijia/Desktop/didi-work/tenon-tool-vue/src/index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.template">
+      <metrics statements="61" coveredstatements="58" conditionals="76" coveredconditionals="58" methods="8" coveredmethods="8"/>
+      <file name="generate.ts" path="/Users/liruijia/Desktop/didi-work/tenon-tool-vue/src/template/generate.ts">
+        <metrics statements="32" coveredstatements="30" conditionals="49" coveredconditionals="36" methods="5" coveredmethods="5"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="16" type="stmt"/>
+        <line num="15" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="14" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="4" type="cond" truecount="6" falsecount="2"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="36" count="8" type="cond" truecount="3" falsecount="1"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="50" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="55" count="12" type="stmt"/>
+        <line num="56" count="12" type="stmt"/>
+        <line num="62" count="8" type="stmt"/>
+        <line num="63" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="64" count="18" type="stmt"/>
+        <line num="65" count="6" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="72" count="8" type="stmt"/>
+        <line num="73" count="8" type="stmt"/>
+        <line num="74" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="8" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/liruijia/Desktop/didi-work/tenon-tool-vue/src/template/index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="translate.ts" path="/Users/liruijia/Desktop/didi-work/tenon-tool-vue/src/template/translate.ts">
+        <metrics statements="21" coveredstatements="20" conditionals="23" coveredconditionals="19" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="27" count="20" type="cond" truecount="1" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="20" type="stmt"/>
+        <line num="32" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="38" count="16" type="stmt"/>
+        <line num="41" count="16" type="cond" truecount="5" falsecount="0"/>
+        <line num="42" count="14" type="stmt"/>
+        <line num="44" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="47" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="48" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="55" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="8" type="stmt"/>
+        <line num="57" count="18" type="stmt"/>
+        <line num="61" count="20" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

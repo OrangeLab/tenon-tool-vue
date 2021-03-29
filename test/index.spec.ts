@@ -1,22 +1,61 @@
-import tenonTemplate  from '../src/index'
+import tenonTemplate from '../src/index'
 describe('tenonTemplate', () => {
-  let result = test(tenonTemplate(`
-  <template>
+  test('test', () => {
+    let result = tenonTemplate(`
+    <template>
     <div>
-      <span class="cont" :style="{background:red,color:red}" @click="go">ddd</span>
-      <test-comp></test-comp>
+    测试
+      <span class="cont" :style="{background:red}" :a="2323" @click="go" v-if="dd" v-show="dd" v-for="item of obj">ddd</span>
+      <test-comp v-else="d"></test-comp>
     </div>
-  </template>
-  <script>
-  import TestComp from "./components/test.vue";
-  export default {
-  };
-  </script>
-  <style lang="less">
+    </template>
+    
+    <script>
+    import TestComp from "./components/test.vue";
+    
+    export default {
+    created() {
+      // hummer setTitle title
+      console.log("");
+    },
+    data() {
+      return {
+        title: "test",
+      };
+    },
+    components: {
+      TestComp,
+    },
+    methods: {
+      go() {
+        location.href='www.baidu.com/a#hash?a=2'
+      },
+    
+    },
+    };
+    </script>
+    <style lang="less">
     .cont {
+    background-color: red;
+    font-size: 15px;
+    image {
+      width: 100%;
+      height: 100%;
+      color: red;
+      .a{
+        width: 100px;
+      }
     }
-  </style>
-`), () => {
-    expect(result).toEqual(`<template><view ><text class="cont" :style="{background:red,color:red}" @tap="go" >ddd</text> <test-comp ></test-comp></view></template>`)
+    
+    }
+    </style>
+`)
+    let format = result.replace(/\s+/g, '')
+    let respect = `<template ><view >测试
+    <text class="cont" :style="{background:red}" :a="2323" v-on:tap="go" v-if="dd" v-show="dd" v-for="item of obj" >ddd</text>
+    <test-comp v-else="d" ></test-comp>
+  </view>
+  </template>`.replace(/(\s)+/g, '')
+    expect(format.length).toEqual(respect.length)
   })
 })

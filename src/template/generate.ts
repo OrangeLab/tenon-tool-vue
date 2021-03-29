@@ -19,13 +19,15 @@ function genProps(props: any[]) {
           break
         case 'style':
           str += `${attr.name}="${attr.value?.content}" `
-        break
+          break
       }
     } else if (attr.type === 7) {
       switch (attr.name) {
         case 'on':
-          let modifiersString = attr.modifiers.join(".");
-          str += `v-on:${attr.arg?.content}${modifiersString ? `.${modifiersString}` : ""}="${attr.exp?.content}" `
+          let modifiersString = attr.modifiers.join('.')
+          str += `v-on:${attr.arg?.content}${
+            modifiersString ? `.${modifiersString}` : ''
+          }="${attr.exp?.content}" `
           break
         case 'bind':
           str += `:${attr.arg?.content}="${attr.exp?.content}" `
@@ -50,7 +52,7 @@ function gen(node: any) {
     return generate(node)
   } else {
     // 文本标签
-    let text = node.content;
+    let text = node.content
     return text
   }
 }
@@ -67,7 +69,6 @@ function genChildren(el: any) {
 }
 // ast to string
 function generate(el: any) {
-  
   let children = genChildren(el)
   let code = ''
   code = `<${el.tag} ${el.props.length ? genProps(el.props) : ''}>${

@@ -12,7 +12,7 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "pretest": "tsc",
-    "test": "yarn lint && jest --env node",
+    "test": "yarn lint && jest --env node --coverage",
     "release": "npm run build && node ./scripts/release.js",
     "lint": "prettier --write --parser typescript \"{src,test}/**/*.ts\""
   },
