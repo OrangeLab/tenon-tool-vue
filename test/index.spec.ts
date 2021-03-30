@@ -6,7 +6,7 @@ describe('tenonTemplate', () => {
     <div>
     测试
       <span class="cont" :style="{background:red}" :a="2323" @click="go" v-if="dd" v-show="dd" v-for="item of obj">ddd</span>
-      <test-comp v-else="d"></test-comp>
+      <test-comp v-else></test-comp>
     </div>
     </template>
     
@@ -53,7 +53,7 @@ describe('tenonTemplate', () => {
     let format = template.replace(/\s+/g, '')
     let respect = `<template ><view >测试
     <text class="cont" :style="{background:red}" :a="2323" v-on:tap="go" v-if="dd" v-show="dd" v-for="item of obj" >ddd</text>
-    <test-comp v-else="d" ></test-comp>
+    <test-comp v-else ></test-comp>
   </view>
   </template>`.replace(/(\s)+/g, '')
     expect(format.length).toEqual(respect.length)

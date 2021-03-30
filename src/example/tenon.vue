@@ -1,13 +1,14 @@
-<template >  <view >    <view >{{greeting}} World!</view>
-    <view v-if="greeting" ></view>
-    <view v-else >ddd</view>
-    <view v-on:tap="go" ></view>
-    <view v-on:tap="test" ></view>
-    <view v-show="greeting" ></view>
+<template>
+  <view>
+    <view>{{ greeting }} World!</view>
+    <view v-if="greeting"></view>
+    <view v-else>ddd</view>
+    <view v-on:tap="go"></view>
+    <view v-on:tap="test"></view>
+    <view v-show="greeting"></view>
   </view>
 </template>
 <script>
-
 export default {
   data() {
     return {
@@ -23,12 +24,10 @@ export default {
     },
   },
 }
-
 </script>
 <style scoped lang="less">
 p {
   font-size: 2em;
   text-align: center;
 }
-
 </style>

@@ -18,7 +18,7 @@ let vueConvertTeon = {
     section: 'view',
     ul: 'view',
     li: 'view',
-    ol:'view'
+    ol: 'view',
   },
   attrConverterConfig: {
     on: {

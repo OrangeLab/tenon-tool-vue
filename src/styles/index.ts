@@ -7,9 +7,9 @@ function tenonStylesTransform(styles: SFCStyleBlock[]) {
     styleFormat += item.content
     attrs = ''
     Object.keys(item.attrs).forEach((attr) => {
-      console.log('======================================');
-      console.log(attr);
-      console.log('======================================');
+      console.log('======================================')
+      console.log(attr)
+      console.log('======================================')
       if (attr === 'scoped') {
         attrs += `${attr} `
       } else {
