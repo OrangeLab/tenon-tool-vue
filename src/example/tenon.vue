@@ -25,7 +25,7 @@ export default {
 }
 
 </script>
-<style scoped=true>
+<style scoped lang="less">
 p {
   font-size: 2em;
   text-align: center;
