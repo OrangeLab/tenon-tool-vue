@@ -1,6 +1,6 @@
 <template>
   <view>
-    <view>{{ greeting }} World! </view>
+    <view>{{greeting}} World! </view>
     <view v-if="greeting"> </view>
     <view v-else-if="!greeting">333 </view>
     <view v-else>ddd </view>
