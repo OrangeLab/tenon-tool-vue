@@ -54,7 +54,7 @@ function gen(node: any) {
     // 文本标签
     return genereateInterpolation(node);
   } else if (node.type === 3) {
-    return ` <!-- ${node.content} -->`
+    return `\n <!-- ${node.content} -->`
   }
   else {
      let text = node.content
