@@ -2,6 +2,7 @@
   <view>
     <view>{{ greeting }} World! </view>
     <view v-if="greeting"> </view>
+    <view v-else-if="!greeting">333 </view>
     <view v-else>ddd </view>
     <view v-on:tap="go"> </view>
     <view v-on:tap="test"> </view>

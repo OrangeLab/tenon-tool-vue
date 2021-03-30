@@ -2,6 +2,7 @@
   <div>
     <p>{{ greeting }} World!</p>
     <div v-if="greeting"></div>
+    <div v-else-if="!greeting">333</div>
     <div v-else>ddd</div>
     <div @click="go"></div>
     <div v-on:click="test"></div>
