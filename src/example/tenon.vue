@@ -1,11 +1,12 @@
 <template>
   <view>
-    <view>{{ greeting }} World!</view>
-    <view v-if="greeting"></view>
-    <view v-else>ddd</view>
-    <view v-on:tap="go"></view>
-    <view v-on:tap="test"></view>
-    <view v-show="greeting"></view>
+    <view>{{ greeting }} World! </view>
+    <view v-if="greeting"> </view>
+    <view v-else>ddd </view>
+    <view v-on:tap="go"> </view>
+    <view v-on:tap="test"> </view>
+    <view v-show="greeting"> </view>
+    <input v-modal="test" />
   </view>
 </template>
 <script>

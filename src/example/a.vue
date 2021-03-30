@@ -6,6 +6,7 @@
     <div @click="go"></div>
     <div v-on:click="test"></div>
     <div v-show="greeting"></div>
+    <input v-modal="test" />
   </div>
 </template>
 
