@@ -4,7 +4,7 @@ function tenonScriptTransform(script: SFCScriptBlock | null) {
     return ''
   }
   let scriptFormat = ''
-  scriptFormat = `\n<sctipt>\n${script?.content}\n</script>`
+  scriptFormat = `\n<script>\n${script?.content}\n</script>`
   return scriptFormat
 }
 export default tenonScriptTransform

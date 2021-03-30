@@ -1,74 +1,23 @@
-import { parse } from '@vue/compiler-sfc'
-import generate from './template/generate'
-import tenonScriptTransform from './script'
-import tenonStylesTransform from './styles'
-import tenonTemplateTransform from './template'
-
-// vueToTenon 解析
-function vueToTenon(vueString: string) {
-  // 1. 编译ast
-  let descriptor = parse(vueString).descriptor
-  // 2. script 处理
-  let script = tenonScriptTransform(descriptor.script)
-  // 3. style 处理
-  let style = tenonStylesTransform(descriptor.styles)
-  // 4. template 处理
-  let template = tenonTemplateTransform(descriptor.template)
-  return { template, script, style }
-}
-export { vueToTenon }
-
-/**
- *template 模板编译器
- *
- * @export
- * @param {string} vueString
- * @return {*}  {string}
- */
-export default function tenonProgram(vueString: string): string {
-  let { template, script, style } = vueToTenon(vueString)
-  console.log(template + script + style)
-  return template + script + style
-}
-
-tenonProgram(`
-<template>
-  <div class="pay-history" :style="{display: showPage}">
-    <template v-if="recordsList.length">
-      <cube-scroll
-        ref="scroll"
-        :data="recordsList"
-        @pulling-up="onScrollPullingUp"
-        :options="options"
-      >
-        <ul>
-          <li v-for="(item, index) in recordsList" :key="index">
-            <!-- 货币改造添加，后端后端接口稳定后可以删除兜底 v-else -->
-            <p v-if="item.amountSplit && item.amountSplit.length === 4">
-              <span>{{ item.title }}</span>
-              <span v-if="item.isIncode == 1">+{{ item.amountSplit[3] }}</span>
-              <span class="low" v-else>-{{ item.amountSplit[3] }}</span>
-            </p>
-            <p v-else>
-              <span>{{ item.title }}</span>
-              <span v-if="item.isIncode == 1">+{{ item.amount }}</span>
-              <span class="low" v-else>-{{ item.amount }}</span>
-            </p>
-            <p>{{ item.subTitle }}</p>
-            <p>{{ item.createTime }}</p>
-          </li>
-        </ul>
+<template >  
+  <view class="pay-history" :style="{display: showPage}" >    
+  <template v-if="recordsList.length" >      
+    <cube-scroll :data="recordsList" v-on:pulling-up="onScrollPullingUp" :options="options" >        <view >          <view v-for="(item, index) in recordsList" :key="index" >            
+ <!--  货币改造添加，后端后端接口稳定后可以删除兜底 v-else  -->
+            <view v-if="item.amountSplit && item.amountSplit.length === 4" >              <text >{{item.title}}</text>
+              <text v-if="item.isIncode == 1" >+{{item.amountSplit[3]}}</text>
+            </view>
+  
+            <view >{{item.subTitle}}</view>
+            <view >{{item.createTime}}</view>
+          </view>
+        </view>
       </cube-scroll>
     </template>
-
-    <div :class="['empty', showEmpty ? 'show' : '']" v-else>
-      <div class="empty-bg"></div>
-      <p>{{ $t('empty') }}</p>
-    </div>
-  </div>
+  </view>
 </template>
 
-<script>
+<scipt>
+
   import * as localApi from '../../api/index.js';
   import _get from '../../lib/lodash-es/get';
   import {urlQuery} from '../../common/js/url';
@@ -184,7 +133,8 @@ tenonProgram(`
       }
     }
   };
-</script>
+
+</scipt>
 
 <style lang="stylus">
   @import '../../common/css/common.styl';
@@ -243,6 +193,3 @@ tenonProgram(`
       .show
           display: block
 </style>
-
-
-`)

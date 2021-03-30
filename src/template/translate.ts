@@ -16,6 +16,9 @@ let vueConvertTeon = {
     img: 'image',
     main: 'view',
     section: 'view',
+    ul: 'view',
+    li: 'view',
+    ol:'view'
   },
   attrConverterConfig: {
     on: {
