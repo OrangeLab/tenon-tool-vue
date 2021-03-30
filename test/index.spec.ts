@@ -1,7 +1,7 @@
-import tenonTemplate from '../src/index'
+import { vueToTenon } from '../src/index'
 describe('tenonTemplate', () => {
   test('test', () => {
-    let result = tenonTemplate(`
+    let { template } = vueToTenon(`
     <template>
     <div>
     测试
@@ -50,7 +50,7 @@ describe('tenonTemplate', () => {
     }
     </style>
 `)
-    let format = result.replace(/\s+/g, '')
+    let format = template.replace(/\s+/g, '')
     let respect = `<template ><view >测试
     <text class="cont" :style="{background:red}" :a="2323" v-on:tap="go" v-if="dd" v-show="dd" v-for="item of obj" >ddd</text>
     <test-comp v-else="d" ></test-comp>

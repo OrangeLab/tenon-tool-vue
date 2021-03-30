@@ -1,4 +1,4 @@
-import { SFCTemplateBlock} from '@vue/compiler-sfc'
+import { SFCTemplateBlock } from '@vue/compiler-sfc'
 import generate from './generate'
 import translate from './translate'
 

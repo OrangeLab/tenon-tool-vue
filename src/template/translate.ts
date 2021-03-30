@@ -11,7 +11,7 @@ type attrOnConfig = 'click'
 let vueConvertTeon = {
   tagConverterConfig: {
     div: 'view',
-    p:'view',
+    p: 'view',
     span: 'text',
     img: 'image',
     main: 'view',
@@ -42,7 +42,8 @@ function translate(ast: ElementNode) {
           let arg = prop.arg as SimpleExpressionNode
           //  简单表达
           if (arg && arg.content) {
-            arg.content = target[(prop as any).arg?.content as attrOnConfig] || arg.content
+            arg.content =
+              target[(prop as any).arg?.content as attrOnConfig] || arg.content
             prop.arg = arg
           }
         }
