@@ -32,6 +32,9 @@ function genProps(props: any[]) {
         case 'bind':
           str += `:${attr.arg?.content}="${attr.exp?.content}" `
           break
+        case 'else':
+          str += `v-${attr.name} `
+          break
         default:
           str += `v-${attr.name}="${attr.exp?.content}" `
       }

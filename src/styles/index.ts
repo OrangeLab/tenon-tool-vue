@@ -12,5 +12,6 @@ function tenonStylesTransform(styles: SFCStyleBlock[]) {
   })
   attrs = attrs.trim()
   styleFormat = `\n<style ${attrs}>${styleFormat}\n</style>`
+  return styleFormat
 }
 export default tenonStylesTransform
