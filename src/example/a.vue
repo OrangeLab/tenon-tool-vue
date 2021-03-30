@@ -2,7 +2,7 @@
   <div>
     <p>{{ greeting }} World!</p>
     <div v-if="greeting"></div>
-    <div v-esle>ddd</div>
+    <div v-else>ddd</div>
     <div @click="go"></div>
     <div v-on:click="test"></div>
     <div v-show="greeting"></div>
