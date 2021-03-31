@@ -12,7 +12,7 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "pretest": "tsc",
-    "test": "yarn lint && jest --env node",
+    "test": "yarn lint && jest --env node --coverage",
     "release": "npm run build && node ./scripts/release.js",
     "lint": "prettier --write --parser typescript \"{src,test}/**/*.ts\""
   },
@@ -41,7 +41,8 @@
     "lint-staged": "^9.5.0",
     "prettier": "^2.2.1",
     "ts-jest": "^25.5.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "vue-beautify": "^1.1.3"
   },
   "jest": {
     "preset": "ts-jest",
@@ -50,5 +51,10 @@
       "<rootDir>/dist/",
       "<rootDir>/node_modules/"
     ]
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.0.7",
+    "js-beautify": "^1.13.5",
+    "vue-template-compiler": "^2.6.12"
   }
 }
