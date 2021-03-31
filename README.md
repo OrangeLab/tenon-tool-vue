@@ -16,7 +16,17 @@ Tenon 转换工具——将 Vue 文件转换为 Tenon 标准文件
 可以暂不做处理，预留对应的模块
 
 ## API
-### `transformVue(vue:string):string`
+### `tenonProgram(vue:string):string`
+
+```js
+// 获取tenon字符串模版
+let tenonString = tenonProgram(''); 
+```
+### vueToTenon(vue:string):Obj
+```js
+// 获取tenon: template script styles,参数vue字符串模版
+let tenonObj  = vueToTenon()
+```
 
 ## TODO
 - [ ] sourcemap 生成

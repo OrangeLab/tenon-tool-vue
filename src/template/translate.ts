@@ -2,6 +2,7 @@ import {
   ElementNode,
   SimpleExpressionNode,
   DirectiveNode,
+  NodeTypes
 } from '@vue/compiler-core'
 import vueConvertTeon, {
   tagConfig,
@@ -9,33 +10,11 @@ import vueConvertTeon, {
   attrOnConfig,
 } from './dslConfig'
 
-// type tagConfig = 'div' | 'span' | 'img' | 'main'
-// type attrConfig = 'on'
-// type attrOnConfig = 'click'
-// 转换规则
-// let vueConvertTeon = {
-//   tagConverterConfig: {
-//     div: 'view',
-//     p: 'view',
-//     span: 'text',
-//     img: 'image',
-//     main: 'view',
-//     section: 'view',
-//     ul: 'view',
-//     li: 'view',
-//     ol: 'view',
-//   },
-//   attrConverterConfig: {
-//     on: {
-//       click: 'tap',
-//     },
-//   },
-// }
 
 function translate(ast: ElementNode) {
   let { tagConverterConfig, attrConverterConfig } = vueConvertTeon
   // 元素节点处理
-  if (ast.type == 1) {
+  if (ast.type == NodeTypes.ELEMENT) {
     //进行标签替换
     if (tagConverterConfig[ast.tag as tagConfig]) {
       ast.tag = tagConverterConfig[ast.tag as tagConfig]
