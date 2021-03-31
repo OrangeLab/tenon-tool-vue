@@ -3,29 +3,34 @@ import {
   SimpleExpressionNode,
   DirectiveNode,
 } from '@vue/compiler-core'
+import vueConvertTeon, {
+  tagConfig,
+  attrConfig,
+  attrOnConfig,
+} from './dslConfig'
 
-type tagConfig = 'div' | 'span' | 'img' | 'main'
-type attrConfig = 'on'
-type attrOnConfig = 'click'
+// type tagConfig = 'div' | 'span' | 'img' | 'main'
+// type attrConfig = 'on'
+// type attrOnConfig = 'click'
 // 转换规则
-let vueConvertTeon = {
-  tagConverterConfig: {
-    div: 'view',
-    p: 'view',
-    span: 'text',
-    img: 'image',
-    main: 'view',
-    section: 'view',
-    ul: 'view',
-    li: 'view',
-    ol: 'view',
-  },
-  attrConverterConfig: {
-    on: {
-      click: 'tap',
-    },
-  },
-}
+// let vueConvertTeon = {
+//   tagConverterConfig: {
+//     div: 'view',
+//     p: 'view',
+//     span: 'text',
+//     img: 'image',
+//     main: 'view',
+//     section: 'view',
+//     ul: 'view',
+//     li: 'view',
+//     ol: 'view',
+//   },
+//   attrConverterConfig: {
+//     on: {
+//       click: 'tap',
+//     },
+//   },
+// }
 
 function translate(ast: ElementNode) {
   let { tagConverterConfig, attrConverterConfig } = vueConvertTeon
