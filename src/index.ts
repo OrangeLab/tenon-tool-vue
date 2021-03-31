@@ -3,8 +3,8 @@ import tenonScriptTransform from './script'
 import tenonStylesTransform from './styles'
 import tenonTemplateTransform from './template'
 
-// vueToTenon 解析
-function vueToTenon(vueString: string) {
+// parseVueToTenon 解析
+export function parseVueToTenon(vueString: string) {
   // 1. 编译ast
   let descriptor = parse(vueString).descriptor
   // 2. script 处理
@@ -15,7 +15,6 @@ function vueToTenon(vueString: string) {
   let template = tenonTemplateTransform(descriptor.template)
   return { template, script, style }
 }
-export { vueToTenon }
 
 /**
  * 模板编译器
@@ -24,7 +23,7 @@ export { vueToTenon }
  * @param {string} vueString
  * @return {*}  {string}
  */
-export function tenonProgram(vueString: string): string {
-  let { template, script, style } = vueToTenon(vueString)
+export function transformVueToTenon(vueString: string): string {
+  let { template, script, style } = parseVueToTenon(vueString)
   return template + script + style
 }

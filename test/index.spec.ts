@@ -1,7 +1,7 @@
-import { vueToTenon } from '../src/index'
+import { parseVueToTenon } from '../src/index'
 describe('tenonTemplate', () => {
   test('test', () => {
-    let { template } = vueToTenon(`
+    let { template } = parseVueToTenon(`
     <template>
     <div>
     测试
