@@ -18,7 +18,7 @@ function vueToTenon(vueString: string) {
 export { vueToTenon }
 
 /**
- *template 模板编译器
+ * 模板编译器
  *
  * @export
  * @param {string} vueString
