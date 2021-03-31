@@ -23,7 +23,7 @@ Tenon 转换工具——将 Vue 文件转换为 Tenon 标准文件
 let {transformVueToTenon} = require("@hummer/tenon-tool-vue")
 let tenonString = transformVueToTenon("<template><div></div></template><style></style><script></script>"); 
 ```
-### `parseVueToTenon(vue:string):{template:string, script:string, styles:Array<string>}`
+### `parseVueToTenon(vue:string):{template:string, script:string, styles:string}`
 ```js
 let {parseVueToTenon} = require("@hummer/tenon-tool-vue")
 // 获取tenon: template script styles,参数vue字符串模版
