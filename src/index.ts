@@ -24,7 +24,7 @@ export { vueToTenon }
  * @param {string} vueString
  * @return {*}  {string}
  */
-export default function tenonProgram(vueString: string): string {
+export function tenonProgram(vueString: string): string {
   let { template, script, style } = vueToTenon(vueString)
   return template + script + style
 }

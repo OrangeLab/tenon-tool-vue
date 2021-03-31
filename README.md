@@ -20,10 +20,12 @@ Tenon 转换工具——将 Vue 文件转换为 Tenon 标准文件
 
 ```js
 // 获取tenon字符串模版
+let {tenonProgram} = require("@hummer/tenon-tool-vue")
 let tenonString = tenonProgram(''); 
 ```
 ### vueToTenon(vue:string):Obj
 ```js
+let {vueToTenon} = require("@hummer/tenon-tool-vue")
 // 获取tenon: template script styles,参数vue字符串模版
 let tenonObj  = vueToTenon()
 ```

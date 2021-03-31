@@ -1,7 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 var vueBeautify = require('vue-beautify')
-let tenonProgram = require('../../dist/index').default
+let {tenonProgram} = require('../../dist/index')
 
 let vuePath = path.resolve(__dirname, 'a.vue')
 let vueString = fs.readFileSync(vuePath, 'utf-8')
