@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@types/estree": "0.0.47",
     "@types/jest": "^25.2.1",
     "enquirer": "^2.3.6",
     "inquirer": "^8.0.0",
