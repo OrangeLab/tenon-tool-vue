@@ -77,12 +77,12 @@ function genChildren(el: any) {
 // ast to string
 function generate(el: any) {
   let children = genChildren(el)
-  let code = '';
-  let endTag = el.isSelfClosing ? '' : `</${el.tag}>`;
-  let startEndTag = el.isSelfClosing ? '/' : "";
-  code = `<${el.tag} ${el.props.length ? genProps(el.props) : ''} ${startEndTag}>${
-    children ? `${children}` : ''
-  } ${endTag}`
+  let code = ''
+  let endTag = el.isSelfClosing ? '' : `</${el.tag}>`
+  let startEndTag = el.isSelfClosing ? '/' : ''
+  code = `<${el.tag} ${
+    el.props.length ? genProps(el.props) : ''
+  } ${startEndTag}>${children ? `${children}` : ''} ${endTag}`
   return code
 }
 // 差值表达式处理

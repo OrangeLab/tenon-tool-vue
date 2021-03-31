@@ -2,14 +2,13 @@ import {
   ElementNode,
   SimpleExpressionNode,
   DirectiveNode,
-  NodeTypes
+  NodeTypes,
 } from '@vue/compiler-core'
 import vueConvertTeon, {
   tagConfig,
   attrConfig,
   attrOnConfig,
 } from './dslConfig'
-
 
 function translate(ast: ElementNode) {
   let { tagConverterConfig, attrConverterConfig } = vueConvertTeon
