@@ -39,7 +39,7 @@ let tenonString = transformVueToTenon(
 )
 ```
 
-### `parseVueToTenon(vue:string):{template:string, script:string, styles:Array<string>}`
+### `parseVueToTenon(vue:string):{template:string, script:string, styles:string}`
 
 ```js
 let { parseVueToTenon } = require('@hummer/tenon-tool-vue')
